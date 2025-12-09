@@ -1,0 +1,73 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Verificador",
+      "request": "launch",
+      "mainClass": "VerificadordeGabarito.Verificador",
+      "projectName": "Java_f749ed83"
+    },
+    {
+      "type": "java",
+      "name": "CorridaV1",
+      "request": "launch",
+      "mainClass": "CorridaV1",
+      "projectName": "Java_f749ed83"
+    },
+    {
+      "type": "java",
+      "name": "TestJacob",
+      "request": "launch",
+      "mainClass": "TestJacob",
+      "projectName": "Java_f749ed83"
+    },
+    {
+      "type": "java",
+      "name": "Corrida",
+      "request": "launch",
+      "mainClass": "Corrida",
+      "projectName": "Java_f749ed83"
+    },
+    {
+      "type": "java",
+      "name": "tiagov5",
+      "request": "launch",
+      "mainClass": "tiagov5",
+      "projectName": "Java_f749ed83"
+    },
+    {
+      "type": "java",
+      "name": "tiagov4",
+      "request": "launch",
+      "mainClass": "tiagov4",
+      "projectName": "Java_f749ed83"
+    },
+    {
+      "type": "java",
+      "name": "tiago",
+      "request": "launch",
+      "mainClass": "tiago",
+      "projectName": "Java_f749ed83"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/joaqu/Desktop/Java",
+      "program": "c:/Users/joaqu/Desktop/Java/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
