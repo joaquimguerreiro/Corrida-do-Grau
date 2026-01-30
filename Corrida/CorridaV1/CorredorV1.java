@@ -13,11 +13,11 @@ public class CorredorV1 {
     boolean isMoto; // Variável verificadora se anda de moto VEICULO falso carro
     String cor; // Cor do corredor
     String reset = "\u001B[0m";
-    boolean posicaoAlocada = false;
+    boolean finalizou = false;
     int posicao;
 
 
-    public CorredorV1(int id, String nome, int km, boolean isHomem, boolean isMoto, String cor, Boolean posicaoAlocada, int posicao) { // função construtora do
+    public CorredorV1(int id, String nome, int km, boolean isHomem, boolean isMoto, String cor, Boolean finalizou, int posicao) { // função construtora do
                                                                                                 // objeto
         // corredor, que será puxado no main
         // (corrida)
@@ -28,7 +28,7 @@ public class CorredorV1 {
         this.isHomem = isHomem; // vincula sexo de entrada com sexo do corredor
         this.isMoto = isMoto; // vincula veiculo de entrada com veiculo do corredor
         this.cor = cor; // cor de entrada com cor do corredor
-        this.posicaoAlocada = posicaoAlocada;
+        this.finalizou = finalizou;
         this.posicao = posicao; 
 
     }

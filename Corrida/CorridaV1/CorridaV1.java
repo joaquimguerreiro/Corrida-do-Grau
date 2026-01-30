@@ -23,10 +23,9 @@ public class CorridaV1 { // Abre a classe corrida
         int posicaoGeral = 0;
 
         int i; // Declaração do I para andarmos no array através do FOR
-        boolean todosFinalizaram = false; // Declaração de varíavel de verificação, para sabermos se foi encontrado um
-                                            // vencedor, no caso, falso
+        boolean corridaEmAndamento = true; // corrida em andamento inicio da logica
 
-        while (!todosFinalizaram) { // Loop para repetir-se até encontrar um vencedor
+        while (corridaEmAndamento == true) { // enquanto a corrida estiver em andamento
 
             try {
                 Thread.sleep(2000); // Pausa de 2 segundos a cada loop
@@ -34,26 +33,40 @@ public class CorridaV1 { // Abre a classe corrida
                 e.printStackTrace();
             }
 
+            corridaEmAndamento = false;
+            posicaoGeral = 0;
+
             for (i = 0; i < corredores.length; i++) { // For para andarmos no array de corredores
 
-                if (!todosFinalizaram && corredores[i].posicaoAlocada == false) {
-                    
-                corredores[i].imprimirVeiculo(); } // Puxa função de Veiculo de cada Corredor
+
+                if (corredores[i].finalizou == false) {
+
+                    corredores[i].imprimirVeiculo();
+                } // Puxa função de Veiculo de cada Corredor
 
                 if (corredores[i].getkm() >= 10) {
 
                     corredores[i].posicao = posicaoGeral + 1;
-                    corredores[i].posicaoAlocada = true;
+                    corredores[i].finalizou = true;
+                    posicaoGeral = corredores[i].posicao;
 
-                } 
-                
+                } else {
 
+                    corridaEmAndamento = true;
                 }
+
+
+
             }
+
 
         }
 
+        for (i = 0; i < corredores.length; i++) {
+            System.out.println(corredores[i].nome + " finalizou na posição: " + corredores[i].posicao);
+        }
     }
 
+}
 
 // Feito pelo Joaquim do Grau
