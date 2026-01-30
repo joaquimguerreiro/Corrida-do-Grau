@@ -1,11 +1,8 @@
-import com.jacob.activeX.ActiveXComponent;
-import com.jacob.com.Variant;
 
 // Declaração do objeto CORREDOR
 
 public class CorredorV1 {
 
-    ActiveXComponent sapi = new ActiveXComponent("SAPI.SpVoice");
 
     // Declaração das variáveis que compõem o objeto CORREDOR
 
@@ -16,8 +13,11 @@ public class CorredorV1 {
     boolean isMoto; // Variável verificadora se anda de moto VEICULO falso carro
     String cor; // Cor do corredor
     String reset = "\u001B[0m";
+    boolean posicaoAlocada = false;
+    int posicao;
 
-    public CorredorV1(int id, String nome, int km, boolean isHomem, boolean isMoto, String cor) { // função construtora do
+
+    public CorredorV1(int id, String nome, int km, boolean isHomem, boolean isMoto, String cor, Boolean posicaoAlocada, int posicao) { // função construtora do
                                                                                                 // objeto
         // corredor, que será puxado no main
         // (corrida)
@@ -28,6 +28,8 @@ public class CorredorV1 {
         this.isHomem = isHomem; // vincula sexo de entrada com sexo do corredor
         this.isMoto = isMoto; // vincula veiculo de entrada com veiculo do corredor
         this.cor = cor; // cor de entrada com cor do corredor
+        this.posicaoAlocada = posicaoAlocada;
+        this.posicao = posicao; 
 
     }
 
@@ -69,12 +71,10 @@ public class CorredorV1 {
         if (isHomem) {
 
             System.out.println("" + nome + " é o vencedor!");
-            sapi.invoke("Speak", new Variant("" + nome + " é o vencedor!"));
 
         } else {
 
             System.out.println("" + nome + " é a vencedora!");
-            sapi.invoke("Speak", new Variant("" + nome + " é a vencedora!"));
 
         }
     }
