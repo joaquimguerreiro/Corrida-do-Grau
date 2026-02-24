@@ -20,45 +20,43 @@ public class CorridaV1 { // Abre a classe corrida
 
         };
 
-        int posicaoGeral = 0;
-
         int i; // Declaração do I para andarmos no array através do FOR
         boolean corridaEmAndamento = true; // corrida em andamento inicio da logica
+        int posicaoGeral = 0;
 
         while (corridaEmAndamento == true) { // enquanto a corrida estiver em andamento
 
             try {
-                Thread.sleep(2000); // Pausa de 2 segundos a cada loop
+                Thread.sleep(500); // Pausa de 2 segundos a cada loop
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
             corridaEmAndamento = false;
-            posicaoGeral = 0;
 
             for (i = 0; i < corredores.length; i++) { // For para andarmos no array de corredores
-
 
                 if (corredores[i].finalizou == false) {
 
                     corredores[i].imprimirVeiculo();
                 } // Puxa função de Veiculo de cada Corredor
 
-                if (corredores[i].getkm() >= 10) {
+                if (corredores[i].finalizou == false && corredores[i].getkm() >= 10) {
 
                     corredores[i].posicao = posicaoGeral + 1;
-                    corredores[i].finalizou = true;
                     posicaoGeral = corredores[i].posicao;
+                }
+
+                if (corredores[i].getkm() >= 10) {
+
+                    corredores[i].finalizou = true;
 
                 } else {
 
                     corridaEmAndamento = true;
                 }
 
-
-
             }
-
 
         }
 
