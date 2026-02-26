@@ -1,6 +1,12 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class CorridaV1 { // Abre a classe corrida
 
-    public static void main(String[] args) {
+    public static char[] resultado;
+
+    public static void main(String[] args) throws IOException {
 
         CorredorV1[] corredores = { // Declara os corredores e os valores de suas variáveis, por ordem, sendo:
 
@@ -60,9 +66,23 @@ public class CorridaV1 { // Abre a classe corrida
 
         }
 
+        String resultado = "";
+
         for (i = 0; i < corredores.length; i++) {
-            System.out.println(corredores[i].nome + " finalizou na posição: " + corredores[i].posicao);
+
+            resultado += ("\n" + corredores[i].nome + " finalizou na posição: " + corredores[i].posicao);
         }
+
+        System.out.println(resultado);
+
+        File log = new File("C:\\Users\\joaqu\\Documents\\GitHub\\Corrida-do-Grau\\Corrida\\CorridaV1\\logs\\log.txt");
+
+        FileWriter fw = new FileWriter(log);
+
+        fw.write(resultado);
+
+        fw.close();
+
     }
 
 }
