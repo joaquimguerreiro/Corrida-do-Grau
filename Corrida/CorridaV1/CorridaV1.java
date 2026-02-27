@@ -1,10 +1,12 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+
 
 public class CorridaV1 { // Abre a classe corrida
-
-    public static char[] resultado;
 
     public static void main(String[] args) throws IOException {
 
@@ -23,6 +25,8 @@ public class CorridaV1 { // Abre a classe corrida
                 new CorredorV1(8, "Jordana", 0, false, false, "\u001B[37m", false, 0),
                 new CorredorV1(9, "Gabrieli", 0, false, false, "\u001B[37m", false, 0),
                 new CorredorV1(10, "Poejo", 0, false, true, "\u001B[34m", false, 0),
+                new CorredorV1(0, "Gabriel", 0, true, false, "", false, 0),
+                new CorredorV1(1, "Ayrton Senna", 0, true, false, "", false, 0),
 
         };
 
@@ -31,9 +35,9 @@ public class CorridaV1 { // Abre a classe corrida
         int posicaoGeral = 0;
 
         while (corridaEmAndamento == true) { // enquanto a corrida estiver em andamento
-
+                                                                                                                                                            
             try {
-                Thread.sleep(500); // Pausa de 2 segundos a cada loop
+                Thread.sleep(1); // Pausa de 2 segundos a cada loop
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -66,6 +70,12 @@ public class CorridaV1 { // Abre a classe corrida
 
         }
 
+        
+        
+        
+        //geracao do resultado
+
+
         String resultado = "";
 
         for (i = 0; i < corredores.length; i++) {
@@ -75,7 +85,19 @@ public class CorridaV1 { // Abre a classe corrida
 
         System.out.println(resultado);
 
-        File log = new File("C:\\Users\\joaqu\\Documents\\GitHub\\Corrida-do-Grau\\Corrida\\CorridaV1\\logs\\log.txt");
+
+
+
+
+        //log
+
+        LocalDateTime dataHoje = LocalDateTime.now();
+
+        DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm-ss");
+
+        String dataFormatada = dataHoje.format(formatador);
+
+        File log = new File("C:\\Users\\joaqu\\Documents\\GitHub\\Corrida-do-Grau\\Corrida\\CorridaV1\\logs\\log "+ dataFormatada +".txt");
 
         FileWriter fw = new FileWriter(log);
 
